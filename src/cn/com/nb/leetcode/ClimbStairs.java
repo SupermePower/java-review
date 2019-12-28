@@ -10,6 +10,17 @@ package cn.com.nb.leetcode;
 public class ClimbStairs {
 
     public static void main(String[] args) {
+        System.out.println(climbStairs(7));
+    }
 
+    private static int climbStairs(int n) {
+        if (n <= 2) return n;
+        int current = 1, next = 2, result = 0;
+        for (int i = 3; i <= n; i++) {
+            result = current + next;
+            current = next;
+            next = result;
+        }
+        return result;
     }
 }
